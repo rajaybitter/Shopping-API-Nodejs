@@ -6,7 +6,7 @@ router.get('/', function(req, res) {
   res.send('respond with a resource');
 });
 
-router.post('/user/login', function(request, response){
+router.post('/login', function(request, response){
 	console.log('Login attempt');
 	var valid = false;
 
@@ -19,7 +19,7 @@ router.post('/user/login', function(request, response){
 	response.send(body)
 });
 
-router.post('/user/register', function(request, response){
+router.post('/register', function(request, response){
 	console.log('Registration attempt');
 	var valid = false;
 
@@ -31,11 +31,11 @@ router.post('/user/register', function(request, response){
 	}
 });
 
-router.post('/user/upload-photo', function(request, response){
+router.post('/upload-photo', function(request, response){
 	console.log('Photo upload attempt');
 });
 
-router.post('/user/update', function(request, response){
+router.post('/update', function(request, response){
 	console.log('Info update attempt');
 });
 

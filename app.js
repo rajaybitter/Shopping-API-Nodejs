@@ -4,12 +4,15 @@ var express     = require('express'),
     favicon     = require('static-favicon'),
     logger      = require('morgan'),
     cookieParser= require('cookie-parser'),
-    bodyParser  = require('body-parser');
+    bodyParser  = require('body-parser'),
+    mongoose    = require('mongoose');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+
+mongoose.connect('mongodb://localhost/');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -23,7 +26,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-app.use('/users', users);
+app.use('/user', users);
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
